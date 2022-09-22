@@ -2,9 +2,9 @@
 <html>
 <head>
   <meta charset="utf-8">
-  <title>Tomorain&#39;s Blog</title>
-  <meta name="keywords" content="">
-  <meta name="description" content="Tomorain&#39;s Blog">
+  <title>【代码随想录】数组 | Tomorain&#39;s Blog</title>
+  <meta name="keywords" content=" 代码随想录 , 数组 ">
+  <meta name="description" content="【代码随想录】数组 | Tomorain&#39;s Blog">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 <meta name="description" content="1. 数组理论基础数组是存放在连续内存空间上的相同类型数据的集合。 数组可以方便的通过下标索引的方式获取到下标下对应的数据。 二维数组在内存的空间地址是连续的么？ 不同编程语言的内存管理是不一样的，以C++为例，在C++中二维数组是连续分布的。 Java是没有指针的，同时也不对程序员暴露其元素的地址，寻址操作完全交给虚拟机。java的二维数组不是内存连续的。 2. 二分查找704. 二分查找 第一">
 <meta property="og:type" content="article">
@@ -58,7 +58,7 @@
 
 
 <body>
-<aside class="nav mobile">
+<aside class="nav">
     <div class="nav-left">
         <a href="/"
    class="avatar_target">
@@ -381,12 +381,62 @@
         </div>
     </div>
 </aside>
-<div id="post" class="index">
+<div id="post">
     <div class="pjax">
-        <article class="index">
-            <div class="toc-ref">
+        <article id="post-数组" class="article article-type-post" itemscope itemprop="blogPost">
     
-        <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#Something-to-Note-and-Share"><span class="toc-text">Something to Note and Share</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%88%9D%E8%A1%B7"><span class="toc-text">初衷</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%90%AD%E5%BB%BA"><span class="toc-text">搭建</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%85%B3%E4%BA%8E%E6%88%91"><span class="toc-text">关于我</span></a></li></ol></li></ol>
+        <h1 class="article-title">【代码随想录】数组</h1>
+    
+    <div class="article-meta">
+        
+        
+        
+        <span class="book">
+            <i class="iconfont icon-category"></i>
+            
+            
+            <a  data-rel="刷题">刷题</a>
+            
+        </span>
+        
+        
+        <span class="tag">
+            <i class="iconfont icon-tag"></i>
+            
+            <a class="color1">代码随想录</a>
+            
+            <a class="color3">数组</a>
+            
+        </span>
+        
+    </div>
+    <div class="article-meta">
+        
+            发布时间 : <time class="date" title='最后更新: 2022-09-07 11:06:40'>2022-09-03 21:38</time>
+        
+    </div>
+    <div class="article-meta">
+        
+        <span>字数:997</span>
+        
+        
+        <span id="busuanzi_container_page_pv">
+            阅读 :<span id="busuanzi_value_page_pv">
+                <span class="count-comment">
+                    <span class="spinner">
+                      <div class="cube1"></div>
+                      <div class="cube2"></div>
+                    </span>
+                </span>
+            </span>
+        </span>
+        
+        
+    </div>
+    
+    <div class="toc-ref">
+    
+        <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#1-%E6%95%B0%E7%BB%84%E7%90%86%E8%AE%BA%E5%9F%BA%E7%A1%80"><span class="toc-text">1. 数组理论基础</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#2-%E4%BA%8C%E5%88%86%E6%9F%A5%E6%89%BE"><span class="toc-text">2. 二分查找</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%9B%B8%E5%85%B3%E9%A2%98%E7%9B%AE"><span class="toc-text">相关题目</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#3-%E7%A7%BB%E9%99%A4%E5%85%83%E7%B4%A0"><span class="toc-text">3. 移除元素</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%9B%B8%E5%85%B3%E9%A2%98%E7%9B%AE-1"><span class="toc-text">相关题目</span></a></li></ol></li></ol>
     
 <style>
     .left-col .switch-btn,
@@ -399,18 +449,144 @@
     }
 </style>
 </div>
-            <h1 id="Something-to-Note-and-Share"><a href="#Something-to-Note-and-Share" class="headerlink" title="Something to Note and Share"></a>Something to Note and Share</h1><h2 id="初衷"><a href="#初衷" class="headerlink" title="初衷"></a>初衷</h2><p>2019.9.27</p>
-<p>之前在csdn上写过几篇博客，不过因为在那里写的文章都是技术博客，并且大佬也不少，这样，如果自己想在上边写一些学习笔记的话也不是很方便，毕竟自己还是个菜鸟。于是，我找了找自己搭建博客的教程，自己也试着弄了弄。因为hexo这个算是把博客放在了github上托管，也不需要自己买服务器，感觉自己现在也还没有买服务器的需求，而且这个搭建过程也算是比较简单，就打算用这个平台，记录一下自己平时的学习。</p>
-<p>2022.8.25</p>
-<p>上次一时兴起搭了个博客还是3年前，：）</p>
-<p>平时要写点记点东西，总是很零碎，专门找个时间去写篇博客又感觉没有心情，就当个备忘录用吧。主要就是笔记、想法、总结这些。</p>
-<h2 id="搭建"><a href="#搭建" class="headerlink" title="搭建"></a>搭建</h2><p>通过 <a target="_blank" rel="noopener" href="https://hexo.io/">Hexo</a> 生成，使用开源主题  <a target="_blank" rel="noopener" href="https://github.com/yelog/hexo-theme-3-hexo">3-hexo</a> ，部署在<a target="_blank" rel="noopener" href="https://github.com/tomorrow-rain/tomorrow-rain.github.io">github</a>上</p>
-<h2 id="关于我"><a href="#关于我" class="headerlink" title="关于我"></a>关于我</h2><p>Tomorain的个人网站。</p>
-<p>到目前为止已经写了<code class="article_number"></code>篇文章， 共<code class="site_word_count"></code>字。</p>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h1 id="1-数组理论基础"><a href="#1-数组理论基础" class="headerlink" title="1. 数组理论基础"></a>1. 数组理论基础</h1><p><strong>数组是存放在连续内存空间上的相同类型数据的集合。</strong></p>
+<p>数组可以方便的通过下标索引的方式获取到下标下对应的数据。</p>
+<p><strong>二维数组在内存的空间地址是连续的么？</strong></p>
+<p>不同编程语言的内存管理是不一样的，以C++为例，在<strong>C++中二维数组是连续分布的</strong>。</p>
+<p>Java是没有指针的，同时也不对程序员暴露其元素的地址，寻址操作完全交给虚拟机。<strong>java的二维数组不是内存连续的。</strong></p>
+<h1 id="2-二分查找"><a href="#2-二分查找" class="headerlink" title="2. 二分查找"></a>2. 二分查找</h1><p><a target="_blank" rel="noopener" href="https://leetcode.cn/problems/binary-search/">704. 二分查找</a></p>
+<p>第一种写法，我们定义 target 是在一个在左闭右闭的区间里，也就是**[left, right]**</p>
+<ul>
+<li>while (left &lt;= right) </li>
+<li>if (nums[middle] &gt; target)  right = middle - 1</li>
+</ul>
+<pre><code class="cpp">// 版本一
+class Solution &#123;
+public:
+    int search(vector&lt;int&gt;&amp; nums, int target) &#123;
+        int left = 0;
+        int right = nums.size() - 1; // 定义target在左闭右闭的区间里，[left, right]
+        while (left &lt;= right) &#123; // 当left==right，区间[left, right]依然有效，所以用 &lt;=
+            int middle = left + ((right - left) / 2);// 防止溢出 等同于(left + right)/2
+            if (nums[middle] &gt; target) &#123;
+                right = middle - 1; // target 在左区间，所以[left, middle - 1]
+            &#125; else if (nums[middle] &lt; target) &#123;
+                left = middle + 1; // target 在右区间，所以[middle + 1, right]
+            &#125; else &#123; // nums[middle] == target
+                return middle; // 数组中找到目标值，直接返回下标
+            &#125;
+        &#125;
+        // 未找到目标值
+        return -1;
+    &#125;
+&#125;;
+</code></pre>
+<p>第二种写法，定义 target 是在一个在左闭右开的区间里，也就是**[left, right)**</p>
+<ul>
+<li>while (left &lt; right)</li>
+<li>if (nums[middle] &gt; target)  right = middle</li>
+</ul>
+<pre><code class="cpp">// 版本二
+class Solution &#123;
+public:
+    int search(vector&lt;int&gt;&amp; nums, int target) &#123;
+        int left = 0;
+        int right = nums.size(); // 定义target在左闭右开的区间里，即：[left, right)
+        while (left &lt; right) &#123; // 因为left == right的时候，在[left, right)是无效的空间，所以使用 &lt;
+            int middle = left + ((right - left) &gt;&gt; 1);
+            if (nums[middle] &gt; target) &#123;
+                right = middle; // target 在左区间，在[left, middle)中
+            &#125; else if (nums[middle] &lt; target) &#123;
+                left = middle + 1; // target 在右区间，在[middle + 1, right)中
+            &#125; else &#123; // nums[middle] == target
+                return middle; // 数组中找到目标值，直接返回下标
+            &#125;
+        &#125;
+        // 未找到目标值
+        return -1;
+    &#125;
+&#125;;
+</code></pre>
+<h2 id="相关题目"><a href="#相关题目" class="headerlink" title="相关题目"></a>相关题目</h2><ul>
+<li><a target="_blank" rel="noopener" href="https://programmercarl.com/0035.%E6%90%9C%E7%B4%A2%E6%8F%92%E5%85%A5%E4%BD%8D%E7%BD%AE.html">35.搜索插入位置(opens new window)</a></li>
+<li><a target="_blank" rel="noopener" href="https://programmercarl.com/0034.%E5%9C%A8%E6%8E%92%E5%BA%8F%E6%95%B0%E7%BB%84%E4%B8%AD%E6%9F%A5%E6%89%BE%E5%85%83%E7%B4%A0%E7%9A%84%E7%AC%AC%E4%B8%80%E4%B8%AA%E5%92%8C%E6%9C%80%E5%90%8E%E4%B8%80%E4%B8%AA%E4%BD%8D%E7%BD%AE.html">34.在排序数组中查找元素的第一个和最后一个位置(opens new window)</a></li>
+<li>69.x 的平方根</li>
+<li>367.有效的完全平方数</li>
+</ul>
+<h1 id="3-移除元素"><a href="#3-移除元素" class="headerlink" title="3. 移除元素"></a>3. 移除元素</h1><p><a target="_blank" rel="noopener" href="https://leetcode.cn/problems/remove-element/">27. 移除元素</a></p>
+<p>解法1：暴力，两层for循环，一个for循环遍历数组元素 ，第二个for循环更新数组</p>
+<p>解法2：双指针法，<strong>通过一个快指针和慢指针在一个for循环下完成两个for循环的工作。</strong></p>
+<p><strong>双指针法（快慢指针法）在数组和链表的操作中是非常常见的，很多考察数组、链表、字符串等操作的面试题，都使用双指针法。</strong></p>
+<pre><code class="cpp">// 时间复杂度：O(n)
+// 空间复杂度：O(1)
+// 不改变元素相对位置
+class Solution &#123;
+public:
+    int removeElement(vector&lt;int&gt;&amp; nums, int val) &#123;
+        int slowIndex = 0;
+        for (int fastIndex = 0; fastIndex &lt; nums.size(); fastIndex++) &#123;
+            if (val != nums[fastIndex]) &#123;
+                nums[slowIndex++] = nums[fastIndex];
+            &#125;
+        &#125;
+        return slowIndex;
+    &#125;
+&#125;;
+</code></pre>
+<pre><code class="cpp">/**
+* 相向双指针方法，基于元素顺序可以改变的题目描述改变了元素相对位置，确保了移动最少元素
+* 时间复杂度：O(n)
+* 空间复杂度：O(1)
+*/
+class Solution &#123;
+public:
+    int removeElement(vector&lt;int&gt;&amp; nums, int val) &#123;
+        int leftIndex = 0;
+        int rightIndex = nums.size() - 1;
+        while (leftIndex &lt;= rightIndex) &#123;
+            // 找左边等于val的元素
+            while (leftIndex &lt;= rightIndex &amp;&amp; nums[leftIndex] != val)&#123;
+                ++leftIndex;
+            &#125;
+            // 找右边不等于val的元素
+            while (leftIndex &lt;= rightIndex &amp;&amp; nums[rightIndex] == val) &#123;
+                -- rightIndex;
+            &#125;
+            // 将右边不等于val的元素覆盖左边等于val的元素
+            if (leftIndex &lt; rightIndex) &#123;
+                nums[leftIndex++] = nums[rightIndex--];
+            &#125;
+        &#125;
+        return leftIndex;   // leftIndex一定指向了最终数组末尾的下一个元素
+    &#125;
+&#125;;
+</code></pre>
+<h2 id="相关题目-1"><a href="#相关题目-1" class="headerlink" title="相关题目"></a>相关题目</h2><ul>
+<li>26.删除排序数组中的重复项</li>
+<li>283.移动零</li>
+<li>844.比较含退格的字符串</li>
+<li>977.有序数组的平方</li>
+</ul>
 
-        </article>
-        
-        
+      
+       <hr><span style="font-style: italic;color: gray;"> 转载请注明来源，欢迎对文章中的引用来源进行考证。 </span>
+    </div>
+</article>
+
+
+
+
+
+
+
+    
+
+
+
+
     </div>
     <div class="copyright">
         <p class="footer-entry">
@@ -419,11 +595,11 @@
 <p class="footer-entry">Built with <a href="https://hexo.io/" target="_blank">Hexo</a> and <a href="https://github.com/yelog/hexo-theme-3-hexo" target="_blank">3-hexo</a> theme</p>
 
     </div>
-</div>
-<div class="full-toc">
-    <button class="full" data-title="切换全屏 快捷键 s"><span class="min "></span></button>
+    <div class="full-toc">
+        <button class="full" data-title="切换全屏 快捷键 s"><span class="min "></span></button>
 <a class="" id="rocket" ></a>
 
+    </div>
 </div>
 
 </body>
